@@ -2,6 +2,8 @@ package org.tangkysin.episodeprogress;
 
 import android.content.res.Resources;
 
+import com.google.gson.Gson;
+
 import java.io.Serializable;
 
 /**
@@ -93,6 +95,10 @@ public class Episode implements Serializable{
 
     public void setTop(boolean top) {
         isTop = top;
+    }
+
+    public String toJsonStr(){
+        return new Gson().toJson(this);
     }
 
     public static EpisodeKind episodeKindSwitcher(String kind) {
